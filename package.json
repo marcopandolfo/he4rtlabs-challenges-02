@@ -1,0 +1,29 @@
+{
+  "name": "he4rtlabs-challenges-02",
+  "version": "1.0.0",
+  "description": "H4rt Challenge n2",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "server": "lite-server --baseDir=src",
+    "start": "concurrently \"npm run watch\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcopandolfo/he4rtlabs-challenges-02.git"
+  },
+  "author": "Marco Antonio P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcopandolfo/he4rtlabs-challenges-02/issues"
+  },
+  "homepage": "https://github.com/marcopandolfo/he4rtlabs-challenges-02#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "lite-server": "^2.5.4",
+    "systemjs": "^6.2.6",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
+  }
+}
