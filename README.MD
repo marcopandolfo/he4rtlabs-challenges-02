@@ -2,6 +2,9 @@
 
 Uma planilha com a cotação de todo o projeto a ser desenvolvido para melhor visualização do cliente.
 
+![image](https://user-images.githubusercontent.com/40467826/77196916-039cdc00-6ac3-11ea-96ea-1f113a1ad63a.png)
+
+
 ## Qual é o valor que o desafio entrega?
 
 Quando você vai cotar um freelance, não adianta saber apenas o quanto vale a sua hora mas sim quantas horas você vai gastar fazendo cada uma das funcionalidades. Mas nem tudo no projeto é desenvolvimento e é sobre isso que devemos entender neste desafio.
