@@ -1,0 +1,41 @@
+.bg-heart {
+  background-color: #502c87;
+}
+.font-white {
+  color: whitesmoke;
+}
+.navbar-heart {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+.navbar-heart:hover {
+  color: whitesmoke;
+}
+.navbar-heart img {
+  margin-bottom: 3px;
+}
+.btn-input-value {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+}
+.btn-input-value i {
+  font-size: 1.3em;
+}
+.actions button {
+  margin: 5px;
+}
+.input-hora-box {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+.list-total {
+  font-weight: 600;
+}
+.list-total li:last-child {
+  font-weight: 700;
+}
+.footer div {
+  font-weight: 600;
+  font-size: 1.1em;
+}

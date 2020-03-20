@@ -4,15 +4,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <title>He4rtLabsChallenges</title>
 </head>
 
 <body>
-  <!--
-        Link para nossa identidade visual
-        https://imgur.com/a/WXy7lwN
-    -->
-  <div>He4rtLabsChallenges #2</div>
+  <header>
+    <nav class="navbar bg-heart justify-content-center">
+      <a class="navbar-brand font-white navbar-heart" href="#">
+        <img src="https://i.imgur.com/9Nn0Fk4.png" width="30" height="25" class="d-inline-block"
+          alt="Logo da heart developers">
+        He4rt Challenges - Planilha de cotação
+      </a>
+    </nav>
+  </header>
+
+  <main role="main">
+    <div class="container">
+      <section id="actions" class="row mt-3 text-center">
+        <div class="col-md-6">
+          <div class="actions-box">
+            <div class="actions">
+              <button class="btn btn-success rounded">Inserir</button>
+              <button class="btn btn-danger rounded">Apagar</button>
+              <button class="btn btn-secondary rounded">Importar</button>
+              <button class="btn btn-info">Exportar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-1">
+          <div class="input-hora-box">
+            <label for="inputValorHora">Valor da sua hora (R$) </label>
+            <input type="number" name="inputValorHora" id="inputValorHora" class="">
+            <button class="btn-input-value">
+              <i class="material-icons">
+                autorenew
+              </i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="entries" class="row mt-4">
+        <div class="col-md-8 text-center">
+          <h4>Funcionalidades</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Horas de desenvolvimento</th>
+                <th scope="col">Horas de teste</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Autenticação</td>
+                <td>2 Horas</td>
+                <td>1 Hora</td>
+              </tr>
+              <tr>
+                <td>User CRUD</td>
+                <td>3.4 Horas</td>
+                <td>4 Horas</td>
+              </tr>
+              <tr>
+                <td>Sistema de ranking</td>
+                <td>7 Horas</td>
+                <td>3 Horas</td>
+              </tr>
+            </tbody>
+          </table>
+          </ul>
+        </div>
+
+        <aside class="col-md-4 text-center">
+          <h4>Total</h4>
+          <ul class="list-group list-total">
+            <li class="list-group-item align-items-center">
+              <span>Total Funcionalidades: </span> 3
+            </li>
+            <li class="list-group-item align-items-center">
+              <span>Horas de desenvolvimento: </span> 3h
+            </li>
+            <li class="list-group-item align-items-center">
+              <span>Horas de teste: </span> 3h
+            </li>
+            <li class="list-group-item align-items-center">
+              <span>Valor total: </span> R$ 2000.00
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer py-2 bg-heart font-white fixed-bottom">
+    <div class="container text-center">
+      © 2020 He4rt Developers
+      <img src="https://i.imgur.com/9Nn0Fk4.png" width="22" height="20" class="d-inline-block"
+        alt="Logo da heart developers">
+    </div>
+  </footer>
 </body>
 <script src="build/index.js"></script>
 
