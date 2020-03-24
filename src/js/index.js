@@ -21,6 +21,17 @@ const refreshHoursValue = () => {
 const clearFormInputs = () =>
   document.getElementById('form-new-feature').reset();
 
+const exportToJsonFile = () => {
+  const dataStr = JSON.stringify(features);
+  let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+  let exportFileDefaultName = 'features.json';
+
+  let linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', exportFileDefaultName);
+  linkElement.click();
+}
 
 const addNewFeature = () => {
   const rowCount = $('.table tr').length;
@@ -63,16 +74,15 @@ $('#form-new-feature').submit(function (event) {
 
 $("#btn-import").click(() => $("#importJson").click());
 
-document.getElementById("importJson").addEventListener("change", event => {
-  const file = event.target.files[0];
+document.getElementById("importJson").addEventListener("change", (event) => {
+  const featuresFile = event.target.files[0];
   const reader = new FileReader();
 
-  reader.readAsText(file);
+  reader.readAsText(featuresFile);
   reader.onloadend = () => {
-    const result = JSON.parse(reader.result);
-
+    const newFeatues = JSON.parse(reader.result);
     let count = 1;
-    result.forEach(f => {
+    newFeatues.forEach(f => {
       f.id = $('.table tr').length + count;
       features.push(f);
       count++;
