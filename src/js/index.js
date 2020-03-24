@@ -1,8 +1,8 @@
 let features = [];
 let hourValue = 1;
 
-features.push({ id: 1, devHours: 3, testHours: 3, name: 'asdsa' });
-features.push({ id: 2, devHours: 3, testHours: 1, name: 'asdsa' });
+features.push({ devHours: 3, testHours: 3, name: 'asdsa', id: 1 });
+features.push({ devHours: 3, testHours: 1, name: 'asdsa', id: 2 });
 
 const calcValue = (feature) =>
   Math.round((feature.devHours + feature.testHours) * hourValue);
@@ -18,19 +18,21 @@ const refreshHoursValue = () => {
   render();
 };
 
-const addNewFeature = (event) => {
-  var rowCount = $('.table tr').length;
+const clearFormInputs = () =>
+  document.getElementById('form-new-feature').reset();
+
+
+const addNewFeature = () => {
+  const rowCount = $('.table tr').length;
   const name = $('#input-name').val();
   const devHours = parseFloat($('#input-devHours').val());
   const testHours = parseFloat($('#input-testHours').val());
 
   features.push({ id: rowCount + 1, devHours, testHours, name });
   $("#modal-insert").modal("toggle");
-  render();
 
-  $('#input-name').val('');
-  $('#input-devHours').val('');
-  $('#input-testHours').val('');
+  render();
+  clearFormInputs();
 };
 
 const render = () => {
@@ -57,4 +59,24 @@ render();
 $('#form-new-feature').submit(function (event) {
   event.preventDefault();
   addNewFeature();
+});
+
+$("#btn-import").click(() => $("#importJson").click());
+
+document.getElementById("importJson").addEventListener("change", event => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.readAsText(file);
+  reader.onloadend = () => {
+    const result = JSON.parse(reader.result);
+
+    let count = 1;
+    result.forEach(f => {
+      f.id = $('.table tr').length + count;
+      features.push(f);
+      count++;
+    });
+    render();
+  };
 });

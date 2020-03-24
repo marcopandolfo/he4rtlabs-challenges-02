@@ -1,0 +1,12 @@
+[
+  {
+    "devHours": 5,
+    "testHours": 1,
+    "name": "CRUD de usuarios"
+  },
+  {
+    "devHours": 3,
+    "testHours": 2,
+    "name": "Autenticação"
+  }
+]
