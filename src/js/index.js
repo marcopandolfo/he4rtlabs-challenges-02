@@ -1,8 +1,8 @@
 let features = [];
 let hourValue = 1;
 
-features.push({ devHours: 3, testHours: 3, name: 'asdsa', id: 1 });
-features.push({ devHours: 3, testHours: 1, name: 'asdsa', id: 2 });
+features.push({ devHours: 3, testHours: 3, name: 'Autenticação', id: 1 });
+features.push({ devHours: 3, testHours: 1, name: 'Tela de login', id: 2 });
 
 const calcValue = (feature) =>
   Math.round((feature.devHours + feature.testHours) * hourValue);
@@ -23,11 +23,11 @@ const clearFormInputs = () =>
 
 const exportToJsonFile = () => {
   const dataStr = JSON.stringify(features);
-  let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
-  let exportFileDefaultName = 'features.json';
+  const exportFileDefaultName = 'features.json';
 
-  let linkElement = document.createElement('a');
+  const linkElement = document.createElement('a');
   linkElement.setAttribute('href', dataUri);
   linkElement.setAttribute('download', exportFileDefaultName);
   linkElement.click();
@@ -44,6 +44,18 @@ const addNewFeature = () => {
 
   render();
   clearFormInputs();
+};
+
+const refreshTotal = () => {
+  const totalFeatures = features.length;
+  const totalDevHours = features.reduce((p, feature) => (p + feature.devHours), 0);
+  const totalTestHours = features.reduce((p, feature) => (p + feature.testHours), 0);
+  const totalValue = parseFloat(totalDevHours + totalTestHours) * hourValue;
+
+  $('#total-features').html(totalFeatures);
+  $('#total-dev').html(totalDevHours);
+  $('#total-test').html(totalTestHours);
+  $('#total-value').html(totalValue);
 };
 
 const render = () => {
@@ -63,6 +75,8 @@ const render = () => {
     </tr>
     `);
   });
+
+  refreshTotal();
 };
 
 render();
