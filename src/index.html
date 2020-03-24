@@ -27,10 +27,9 @@
         <div class="col-md-6">
           <div class="actions-box">
             <div class="actions">
-              <button class="btn btn-success rounded">Inserir</button>
-              <button class="btn btn-danger rounded">Apagar</button>
+              <button data-toggle="modal" data-target="#modal-insert" class="btn btn-success rounded">Inserir</button>
               <button class="btn btn-secondary rounded">Importar</button>
-              <button class="btn btn-info">Exportar</button>
+              <button class="btn btn-info rounded">Exportar</button>
             </div>
           </div>
         </div>
@@ -38,8 +37,8 @@
         <div class="col-md-6 mt-1">
           <div class="input-hora-box">
             <label for="inputValorHora">Valor da sua hora (R$) </label>
-            <input type="number" name="inputValorHora" id="inputValorHora" class="">
-            <button class="btn-input-value">
+            <input type="number" name="inputValorHora" id="inputValorHora" value="1">
+            <button class="btn-input-value" id="btn-refresh-hours-value" onclick="refreshHoursValue()">
               <i class="material-icons">
                 autorenew
               </i>
@@ -57,6 +56,8 @@
                 <th scope="col">Feature</th>
                 <th scope="col">Horas de desenvolvimento</th>
                 <th scope="col">Horas de teste</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Apagar</th>
               </tr>
             </thead>
             <tbody>
@@ -64,16 +65,12 @@
                 <td>Autenticação</td>
                 <td>2 Horas</td>
                 <td>1 Hora</td>
-              </tr>
-              <tr>
-                <td>User CRUD</td>
-                <td>3.4 Horas</td>
-                <td>4 Horas</td>
-              </tr>
-              <tr>
-                <td>Sistema de ranking</td>
-                <td>7 Horas</td>
-                <td>3 Horas</td>
+                <td>R$ 126.00</td>
+                <td>
+                  <button class="btn-remove-table">
+                    <i class="material-icons btn-remove-icon">delete</i>
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -101,14 +98,56 @@
     </div>
   </main>
 
+  <!-- Modal Insert -->
+  <div class="modal fade" id="modal-insert" tabindex="-1" role="dialog" aria-labelledby="insertModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <dialog class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Inserir novo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+        <main class="modal-body">
+          <form id="form-new-feature">
+            <div class="form-group">
+              <label for="name">Nome da funcionalidade</label>
+              <input type="text" class="form-control" id="input-name" placeholder="Insira o nome da funcionalidade">
+            </div>
+            <div class="form-group">
+              <label for="devHours">Horas de desenvolvimento</label>
+              <input type="number" class="form-control" id="input-devHours" placeholder="Horas de desenvolvimento">
+            </div>
+            <div class="form-group">
+              <label for="testHours">Horas de teste</label>
+              <input type="number" class="form-control" id="input-testHours" placeholder="Horas de teste">
+            </div>
+        </main>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn bg-heart font-white btn-submit">Salvar</button>
+        </footer>
+        </form>
+      </dialog>
+    </div>
+  </div>
+
+
   <footer class="footer py-2 bg-heart font-white fixed-bottom">
     <div class="container text-center">
       © 2020 He4rt Developers
       <img src="https://i.imgur.com/9Nn0Fk4.png" width="22" height="20" class="d-inline-block"
         alt="Logo da heart developers">
+      - <a class="font-white" href="#">Specko</a>
     </div>
   </footer>
 </body>
-<script src="build/index.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/index.js"></script>
 
 </html>

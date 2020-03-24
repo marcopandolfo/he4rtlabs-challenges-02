@@ -4,6 +4,9 @@
 .font-white {
   color: whitesmoke;
 }
+.font-white:hover {
+  color: whitesmoke;
+}
 .navbar-heart {
   font-weight: 500;
   font-size: 1.5em;
@@ -38,4 +41,17 @@
 .footer div {
   font-weight: 600;
   font-size: 1.1em;
+}
+.btn-remove-icon {
+  font-size: 1.5em;
+  vertical-align: text-bottom;
+  color: #464646;
+}
+.btn-remove-table {
+  background-color: transparent;
+  border: none;
+}
+.btn-submit:hover {
+  color: whitesmoke;
+  border: 0px solid none;
 }
